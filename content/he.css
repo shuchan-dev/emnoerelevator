@@ -1,0 +1,473 @@
+/* elemen utama */
+
+* {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* akhir elemen utama */
+
+
+/* elemen pembantu */
+
+body {
+	background: greenyellow;
+	background: url('./img/bg5.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: linear-gradient(to right, ghostwhite, dodgerblue, midnightblue);
+	padding: 0 25px;
+	transition: 0.3s;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	z-index: 1;
+	opacity: 0.96;
+}
+/* akhir elemen pembantu */
+
+
+/* elemen logo */
+
+.logo img {
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin-top: -6px;
+}
+/* akhir elemen logo */
+
+
+/* elemen menu dan hamburger*/
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	z-index: 1;
+	transition: 0.5s;
+}
+
+.menu li {
+	list-style-type: none;
+}
+
+.menu li a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 40px 25px;
+	font-size: 18px;
+	line-height: 1;
+	transition: 0.3s;
+}
+
+.menu li a:hover {
+	box-shadow: 0 -5px 0px #fff inset,
+	500px 0 0 rgba(255, 255, 255, 0.03) inset;
+	padding: 35px 25px 45px 25px;
+}
+
+.hamburger {
+	position: relative;
+	width: 30px;
+	height: 4px;
+	background: white;
+	border-radius: 10px;
+	cursor: pointer;
+	z-index: 2;
+	transition: 0.3s;
+}
+
+.hamburger:before,
+.hamburger:after {
+	content: "";
+	position: absolute;
+	height: 4px;
+	right: 0;
+	background: white;
+	border-radius: 10px;
+	transition: 0.3s;
+}
+
+.hamburger:before {
+	top: -10px; 
+	width: 20px;
+}
+
+.hamburger:after {
+	top: 10px;
+	width: 25px;
+}
+
+.toggle-menu {
+	position: absolute;
+	width: 30px;
+	height: 100%;
+	z-index: 3;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.hamburger,
+.toggle-menu {
+	display: none;
+}
+
+.navigation input:checked ~ .hamburger {
+	background: transparent;
+}
+
+.navigation input:checked ~ .hamburger:before {
+	top: 0;
+	transform: rotate(-45deg);
+	width: 30px;
+}
+
+.navigation input:checked ~ .hamburger:after {
+	top: 0;
+	transform: rotate(45deg);
+	width: 30px;
+}
+
+.navigation input:checked ~ .menu {
+	right: 0;
+	box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+}
+/* akhir elemen menu dan hamburger */
+
+
+/* elemen responsive menu dan hamburger */
+
+@media screen and (max-width: 960px) {
+	.hamburger,
+	.toggle-menu {
+		display: block;
+	}
+	.header {
+		padding: 10px 20px;
+	}
+	.menu {
+		justify-content: start;
+		flex-direction: column;
+		align-items: center;
+		position: fixed;
+		top: 0;
+		right: -300px;
+		background: dodgerblue;
+		width: 225px;
+		height: 100%;
+		padding-top: 65px;
+	}
+	.menu li {
+		width: 100%;
+	}
+	.menu li a {
+		transition: 0.2s all;
+		text-decoration: none;
+	}
+	.menu li a:hover {
+		transform: scale(1.08);
+	}
+	.menu li a,
+	.menu li a:hover {
+		padding: 30px;
+		font-size: 20px;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+	}
+}
+/* akhir elemen responsive menu dan hamburger */
+
+
+/* elemen setting container */
+
+.container {
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.container .kolom {
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+/* akhir elemen setting container */
+
+
+/* elemen application */
+
+.application .container .deskripsi {
+	font-size: 25px;
+	font-weight: bold;
+	font-family: sans-serif;
+	color: darkgoldenrod;
+	width: 65%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.application .container .kolom h2 {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	color: darkslategrey;
+	width: 60%;
+	line-height: 40px;
+	margin-top: -20px;
+	margin-left: 40px;
+}
+
+.application .container img {
+	width: 20%;
+	float: right;
+	margin-top: -370px;
+	margin-right: 115px;
+}
+/* akhir elemen application */
+
+
+/* elemen tombol order */
+
+.application .container .tbl-biru a {
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+	background: orangered;
+	border-radius: 20px;
+	padding: 10px 30px 10px 30px;
+	color: white;
+	margin-left: -55px;
+}
+
+.application .container .tbl-biru a:hover {
+	background: darkgoldenrod;
+}
+/* akhir elemen tombol order */
+
+
+/* alamat */
+
+.alamat .container .deskripsi1 {
+	font-size: 20px;
+	font-weight: bold;
+	font-family: sans-serif;
+	color: steelblue;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.alamat .container .kolom-alamat h3 {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: 15px;
+	color: darkslategrey;
+	line-height: 15px;
+	text-align: center;
+}
+/* akhir alamat */
+
+
+/* garis horizontal */
+
+.line-horizontal .container hr {
+	margin-top: 10px;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+}
+/* akhir garis horizontal */
+
+
+/* social media */
+
+.social-media .container .sosmed-link {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-left: 25px;
+}
+
+.social-media .container .sosmed-link .sosiaLink {
+	width: 2.50em;
+	height: 2.50em;
+	margin-right: 1.25em;
+	border-radius: 9999em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rebeccapurple;
+	text-decoration: inherit;
+	border-bottom: 1px solid;
+	border-right: solid;
+}
+
+.social-media .container .sosmed-link .fill-current {
+	fill: currentColor;
+}
+
+.social-media .container .sosmed-link .sosiaLink:hover {
+	color: white;
+	background-color: cadetblue;
+}
+/* akhir social media */
+
+
+/* footer */
+
+footer {
+	margin-top: -30px;
+	text-align: center;
+}
+
+footer b {
+	color: steelblue;
+}
+/* akhir footer */
+
+
+/* elemen responsive */
+
+@media screen and (max-width: 960px) {
+	.application {
+		width: auto;
+	}
+	.application .container {
+		width: auto;
+		margin-left: -10px;
+		margin-right: 5px;
+	}
+	.application .container .deskripsi {
+		width: auto;
+	} 
+	.application .container .kolom h2 {
+		width: auto;
+		margin-right: 25px;
+	}
+	.application .container img {
+		float: none;
+		width: 42.5%;
+		height: 600px;
+		margin-top: -15px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+	.application .container .tbl-biru {
+		margin-top: 70px;
+		margin-bottom: 15px;
+		margin-left: 70px;
+	}
+	.alamat .container .deskripsi1 {
+		margin-top: 35px;
+	}
+	.alamat .container .kolom-alamat h3 {
+		line-height: 17.5px;
+	}
+}
+/* akhir elemen responsive */
+
+
+/* elemen responsive menu dan hamburger */
+
+@media screen and (max-width: 640px) {
+	.hamburger,
+	.toggle-menu {
+		display: block;
+	}
+	.header {
+		padding: 10px 20px;
+	}
+	.menu {
+		justify-content: start;
+		flex-direction: column;
+		align-items: center;
+		position: fixed;
+		top: 0;
+		right: -300px;
+		background: dodgerblue;
+		width: 175px;
+		height: 100%;
+		padding-top: 65px;
+	}
+	.menu li {
+		width: 100%;
+	}
+	.menu li a {
+		transition: 0.2s all;
+		text-decoration: none;
+	}
+	.menu li a:hover {
+		transform: scale(1.08);
+	}
+	.menu li a,
+	.menu li a:hover {
+		padding: 30px;
+		font-size: 17px;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+	}
+}
+/* akhir elemen responsive menu dan hamburger */
+
+
+/* elemen responsive */
+
+@media screen and (max-width: 640px) {
+	.application {
+		width: auto;
+	}
+	.application .container {
+		width: auto;
+		margin-left: -10px;
+		margin-right: 5px;
+	}
+	.application .container .deskripsi {
+		width: auto;
+	} 
+	.application .container .kolom h2 {
+		width: auto;
+		margin-right: 25px;
+		font-size: 17.3px;
+	}
+	.application .container img {
+		float: none;
+		width: 45%;
+		height: 300px;
+		margin-top: -15px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+	.application .container .tbl-biru {
+		margin-top: 60px;
+		margin-bottom: 15px;
+		margin-left: 70px;
+	}
+	.alamat .container .deskripsi1 {
+		margin-top: 35px;
+	}
+	.alamat .container .kolom-alamat h3 {
+		line-height: 17.5px;
+		font-size: 15px;
+	}
+}
+/* akhir elemen responsive */
